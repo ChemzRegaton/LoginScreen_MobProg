@@ -1,16 +1,26 @@
 import { TextInput, TouchableOpacity, Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
     const handleLoginPress = () => {
 
         console.log('Login button pressed');
     };
+    const handleForgotPress = () => {
+        console.log('Forgot Password link pressed');
+    }
+    const handleRgstPortalPress = () => {
+        navigation.navigate('Registration');
+        console.log('Sign Up here. link pressed');
+    }
 
   return (
     <View style={styles.container}>
         <View style={styles.mobile_bg}>
             <Image source={require("../assets/mobile_bg.png")} style={styles.mobile_bgImage} />   
+        </View>
+        <View style={styles.women_bg}>
+            <Image source={require("../assets/2.png")} style={styles.women_bgImage} />   
         </View>
         <View style={styles.welcomeContainer}>
             <Text style={styles.welcomeLabel}>Welcome!</Text>
@@ -27,12 +37,22 @@ const LoginScreen = () => {
             placeholder='Password' />
         </View>
         <View>
-            <Text style={styles.forgotPasswordLabel}> Forgot Password?</Text>
+            <TouchableOpacity style={styles.forgotPasswordLabel} onPress={handleForgotPress}>
+                <Text style={styles.forgotPasswordLabel}>Forgot Password?</Text>
+            </TouchableOpacity>  
         </View>
         <View style={styles.loginButtonContainer}>
             <TouchableOpacity style={styles.loginButtonLabel} onPress={handleLoginPress}>
                 <Text style={styles.loginButtonText}>Login</Text>
             </TouchableOpacity>
+        </View>
+        <View  style={styles.registrationPortalContainer}>
+            <Text  style={styles.registrationPortalLabel}> You have an already account?
+            <View>
+            <TouchableOpacity style={styles.rgstPortalContainer} onPress={handleRgstPortalPress}>
+                <Text style={styles.rgstPortalLabel}> Sign Up here.</Text>
+            </TouchableOpacity> 
+            </View></Text> 
         </View>
     </View>
   )
@@ -47,15 +67,22 @@ const styles = StyleSheet.create({
     },
     mobile_bgImage:{
         width: "100%",
-       height: 250,
+        height: 250,
+    },
+    women_bgImage:{
+        width: "100%",
+        height: 250,
+        marginBottom: 120,
+        marginTop: -200
     },
     welcomeLabel: {
         fontSize: 70,
         marginTop: -150,
         fontWeight: "600",
         textAlign: "center",
-        color: "black",
+        color: "darkgreen",
     },
+    
     signinLabel: {
         fontSize: 18,
         marginTop: -60,
@@ -93,7 +120,8 @@ const styles = StyleSheet.create({
     forgotPasswordLabel:{
         color: "#2865fa",
         textAlign: "right",
-        marginRight: 60,
+        marginRight: 20,
+
     },
 
     loginButtonContainer:{
@@ -113,5 +141,17 @@ const styles = StyleSheet.create({
         fontSize: 20,
         textAlign: "center",
         
+    },
+    registrationPortalLabel:{
+        textAlign: "center",
+        color: "black",
+        fontSize: 15,
+        marginBottom: 10
+    },
+    rgstPortalLabel:{
+        color: "#2865fa",
+        fontSize: 15,
+        textAlign: "auto"
+
     }
 });
