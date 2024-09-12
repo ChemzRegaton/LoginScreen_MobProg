@@ -21,13 +21,13 @@ const RegistrationScreen = ({navigation}) => {
             <Image source={require("../assets/1.png")} style={styles.women_bgImage} />   
         </View>
         <View style={styles.welcomeContainer}>
-            <Text style={styles.welcomeLabel}>Hello User!</Text>
+            <Text style={styles.welcomeLabel}>Registration</Text>
         </View>
         <View  style={styles.signupContainer}>
             <Text  style={styles.signupLabel}> Create your account here</Text>
         </View>
         <View style={styles.nameContainer}>
-            <Icon name="user" size={16} marginHorizontal={10} marginVertical={8} color={"darkgreen"}/>
+            <Icon name="user" size={16} marginHorizontal={15} marginVertical={8} color={"darkgreen"}/>
             <TextInput style={styles.nameTextInput}
             placeholder='Name' />
         </View>
@@ -81,8 +81,8 @@ const styles = StyleSheet.create({
      marginTop: -200
   },
     welcomeLabel: {
-        fontSize: 70,
-        marginTop: -150,
+        fontSize: 55,
+        marginTop: -135,
         fontWeight: "600",
         textAlign: "center",
         color: "darkgreen",
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     },
     nameTextInput:{
         flex: 1,
-        marginLeft: 15,
+        marginLeft: 0,
     },
     emailAddressContainer:{
         backgroundColor: "white",
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     },
     emailAddressTextInput:{
         flex: 1,
-        marginLeft: 15,
+        marginLeft: 3.5,
     },
     passwordContainer:{
         backgroundColor: "white",
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     },
     passwordTextInput:{
         flex: 1,
-        marginLeft: 15,
+        marginLeft: 7.5,
     },
     confirmPassContainer:{
       backgroundColor: "white",
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
   },
   confirmPassTextInput:{
       flex: 1,
-      marginLeft: 15,
+      marginLeft: 3,
   },
 
     forgotPasswordLabel:{
