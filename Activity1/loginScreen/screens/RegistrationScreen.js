@@ -1,9 +1,10 @@
 import { TextInput, TouchableOpacity, Image, StyleSheet, Text, View } from 'react-native'
+import Icon from 'react-native-vector-icons/FontAwesome';
 import React from 'react'
 
 const RegistrationScreen = ({navigation}) => {
     const handleLoginPress = () => {
-
+        navigation.navigate('Landing')
         console.log('Login button pressed');
     };
     const handleLgnPortalPress = () => {
@@ -26,18 +27,22 @@ const RegistrationScreen = ({navigation}) => {
             <Text  style={styles.signupLabel}> Create your account here</Text>
         </View>
         <View style={styles.nameContainer}>
+            <Icon name="user" size={16} marginHorizontal={10} marginVertical={8} color={"darkgreen"}/>
             <TextInput style={styles.nameTextInput}
             placeholder='Name' />
         </View>
         <View style={styles.emailAddressContainer}>
+            <Icon name="envelope" size={16} marginHorizontal={10} marginVertical={8} color={"darkgreen"}/>
             <TextInput style={styles.emailAddressTextInput}
             placeholder='Email Address' />
         </View>
         <View style={styles.passwordContainer}>
+            <Icon name="lock" size={16} marginHorizontal={10} marginVertical={8} color={"darkgreen"}/>  
             <TextInput style={styles.passwordTextInput}
             placeholder='Password' />
         </View>
         <View style={styles.confirmPassContainer}>
+            <Icon name="key" size={16} marginHorizontal={10} marginVertical={8} color={"darkgreen"}/> 
             <TextInput style={styles.confirmPassTextInput}
             placeholder='Confirm Password' />
         </View>
@@ -47,7 +52,7 @@ const RegistrationScreen = ({navigation}) => {
             </TouchableOpacity>
         </View>
         <View  style={styles.loginPortalContainer}>
-            <Text  style={styles.loginPortalLabel}> You have an already account?
+            <Text  style={styles.loginPortalLabel}> Have an already account?
             <View>
             <TouchableOpacity style={styles.lgnPortalContainer} onPress={handleLgnPortalPress}>
                 <Text style={styles.lgnPortalLabel}> Log in here.</Text>
